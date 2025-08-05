@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - E-commerce Website</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+
+        /* Hero Section */
+        #about-hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/new/1.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 76px;
+        }
+
+        #about-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        #about-hero p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h3 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .section-title hr {
+            width: 80px;
+            height: 3px;
+            background: #e74c3c;
+            border: none;
+            margin: 0 auto 1rem;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Story Section */
+        #story {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .story-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .story-text {
+            flex: 1;
+        }
+
+        .story-text h4 {
+            color: #e74c3c;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .story-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .story-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .story-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Values Section */
+        #values {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: white;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: #e74c3c;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .value-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Stats Section */
+        #stats {
+            padding: 60px 0;
+            background: #e74c3c;
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Why Choose Us Section */
+        #why-choose {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        /* CTA Section */
+        #cta {
+            padding: 60px 0;
+            background: white;
+            text-align: center;
+        }
+
+        .cta-button {
+            background: #e74c3c;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #c0392b;
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+
+        /* Footer matching your existing style */
+        footer {
+            background: #222;
+            color: white;
+        }
+
+        .footer-one a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-one a:hover {
+            color: #e74c3c;
+        }
+
+        .copyright {
+            border-top: 1px solid #444;
+            padding-top: 2rem;
+        }
+
+        .copyright p {
+            margin: 0;
+            color: #ccc;
+        }
+
+        .copyright a {
+            color: #ccc;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .copyright a:hover {
+            color: #e74c3c;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #about-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            #about-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .story-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .section-title h3 {
+                font-size: 2rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
+        <div class="container">
+            <img src="img/logo1.png" alt="Logo">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span><i id="bar" class="fa-solid fa-bars"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fa-solid fa-search"></i>
+                        <i onclick="window.location.href='cart.html'" class="fa-solid fa-shopping-cart"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about-hero">
+        <div class="container">
+            <h1>About Our Store</h1>
+            <p>A brand that speaks for itself, a place where you can shop all types of daily accessories with the best prices and quality.</p>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story">
+        <div class="container">
+            <div class="section-title">
+                <h3>Our Story</h3>
+                <hr>
+                <p>Discover how we became your trusted destination for quality fashion and accessories</p>
+            </div>
+            <div class="story-content">
+                <div class="story-text">
+                    <h4>Quality Meets Affordability</h4>
+                    <p>Founded with a simple vision - to make quality fashion accessible to everyone. We believe that looking good shouldn't cost a fortune, which is why we've carefully curated a collection that combines style, comfort, and affordability.</p>
+                    
+                    <p>From running shoes to elegant dresses, from luxury watches to trendy accessories, we've built relationships with trusted suppliers worldwide to bring you the best products at fair prices. Every item in our store is selected with care, ensuring you get both quality and value.</p>
+                    
+                    <p>Our commitment goes beyond just selling products - we're here to help you express your unique style and feel confident in whatever you choose to wear.</p>
+                </div>
+                <div class="story-image">
+                    <div style="width: 300px; height: 300px; background: linear-gradient(45deg, #e74c3c, #ff6b6b); border-radius: 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem; margin: 0 auto;">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section id="values">
+        <div class="container">
+            <div class="section-title">
+                <h3>Why Choose Us</h3>
+                <hr>
+                <p>What makes us different from other online stores</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h5>Premium Quality</h5>
+                    <p>We source only the finest materials and work with trusted manufacturers to ensure every product meets our high standards.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fa-solid fa-tags"></i>
+                    </div>
+                    <h5>Fair Prices</h5>
+                    <p>Quality doesn't have to be expensive. We offer competitive pricing without compromising on the quality you deserve.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fa-solid fa-shipping-fast"></i>
+                    </div>
+                    <h5>Fast Delivery</h5>
+                    <p>Quick and reliable shipping across Pakistan. Get your favorite items delivered right to your doorstep in record time.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h5>24/7 Support</h5>
+                    <p>Our dedicated customer service team is always here to help you with any questions or concerns you might have.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>25,000+</h3>
+                    <p>Happy Customers</p>
+                </div>
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>Products Available</p>
+                </div>
+                <div class="stat-item">
+                    <h3>98%</h3>
+                    <p>Customer Satisfaction</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Cities Covered</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section id="why-choose">
+        <div class="container">
+            <div class="section-title">
+                <h3>Our Promise</h3>
+                <hr>
+                <p>What you can expect when shopping with us</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fa-solid fa-shield-check"></i>
+                    </div>
+                    <h5>Secure Shopping</h5>
+                    <p>Your personal and payment information is protected with industry-standard security measures.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fa-solid fa-undo"></i>
+                    </div>
+                    <h5>Easy Returns</h5>
+                    <p>Not satisfied with your purchase? Return it within 7 days for a full refund or exchange.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h5>Quality Guarantee</h5>
+                    <p>We stand behind every product we sell with our comprehensive quality guarantee.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta">
+        <div class="container">
+            <h3 style="margin-bottom: 1rem; color: #333;">Ready to Start Shopping?</h3>
+            <p style="margin-bottom: 2rem; color: #666; font-size: 1.1rem;">Explore our latest collection and find your perfect style today.</p>
+            <a href="shop.html" class="cta-button">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-5 py-5">
+    <div class="row container mx-auto pt-5">
+        <div class="footer-one col-lg-3 col-md-6 col-12">
+            <img src="img/logo2.png" alt="">
+            <p class="pt-3">
+                A brand that speaks for itself, a place where you can shop all type of daily accessories. 
+            </p>
+        </div>
+        <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+            <h5 class="pb-2">Features</h5>
+            <ul class="text-uppercase list-unstyled">
+                <li> <a href="#">Men</a></li>
+                <li> <a href="#">Women</a></li>
+                <li> <a href="#">Boys</a></li>
+                <li> <a href="#">Girls</a></li>
+                <li> <a href="#">New Arrivals</a></li>
+                <li> <a href="#">Shoes</a></li>
+                <li> <a href="#">Clothes</a></li>
+
+            </ul>
+        </div>
+
+        <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+            <h5 class="pb-2">Contact Us</h5>
+            <div>
+               <h6 class="text-uppercase">Address</h6> 
+               <p>Street No 3, Bahria Town, Islamabad, Pakistan</p>
+            </div>
+            <div>
+               <h6 class="text-uppercase">Phone</h6> 
+               <p>+92321-7869031</p>
+            </div>
+            <div>
+               <h6 class="text-uppercase">Email</h6> 
+               <p>mail@example.com</p>
+            </div>
+        </div>
+
+                <div class="footer-one col-lg-3 col-md-6 col-12">
+            <h5 class="pb-2">Instagram</h5>
+            <div class="row">
+                <img class="img-fluid w-25 h-100 m-2" src="img/insta/1.jpg">
+                <img class="img-fluid w-25 h-100 m-2" src="img/insta/2.jpg">
+                <img class="img-fluid w-25 h-100 m-2" src="img/insta/3.jpg">
+                <img class="img-fluid w-25 h-100 m-2" src="img/insta/4.jpg">
+                <img class="img-fluid w-25 h-100 m-2" src="img/insta/5.jpg">
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="copyright mt-5">
+        <div class="row container mx-auto">
+            
+            <div class="col-lg-3 col-md-6 col-12 mb-4">
+                <img src="img/payment.png">
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 text-nowrap">
+                <p>rymo eCommerce © 2025. All Rights Reserved</p>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 mb-2">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+        integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+        integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
